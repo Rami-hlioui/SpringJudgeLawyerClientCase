@@ -6,6 +6,7 @@ import com.example.demo.models.CaseStatus;
 import com.example.demo.models.Client;
 import com.example.demo.models.Judge;
 import com.example.demo.models.Lawyer;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,9 +21,14 @@ public class CaseDTO {
 
 	private CaseStatus status;
 
-	private Judge judgeId;
-
-	private Lawyer lawyerId;
+//	@JsonIgnore
+//	private Judge judgeId;
+//
+//	@JsonIgnore
+//	private Lawyer lawyerId;
+//	
+//	@JsonIgnore
+//	private Client clientId;
 	
-	private Client clientId;
+	
 }

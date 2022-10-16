@@ -41,11 +41,8 @@ public class CaseService {
 	
 	public Case updateCase(CaseDTO caseDTO) {
 		Case TempCase = CaseRepo.findById(caseDTO.getId()).orElse(null);
-		TempCase.setCaseName(caseDTO.getCaseName());
+		TempCase.setName(caseDTO.getCaseName());
 		TempCase.setStatus(caseDTO.getStatus());
-		TempCase.setClientId(caseDTO.getClientId());
-		TempCase.setLawyerID(caseDTO.getLawyerId());
-		TempCase.setJudgeId(caseDTO.getJudgeId());
 		return CaseRepo.save(TempCase);
 	}
 }

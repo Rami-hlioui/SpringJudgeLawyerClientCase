@@ -1,5 +1,4 @@
 package com.example.demo.models;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,19 +22,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "client")
+@Table(name="client")
 public class Client {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="client_id")
 	private long id;	
 
-	@Column(name = "name")
+	@Column(name="name")
 	private String name;
 
 	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY)
-	@JoinColumn(name="case_id")
+	@JoinColumn(name="client_id")
 	private List<Case> cases= new ArrayList<>();
-
 }

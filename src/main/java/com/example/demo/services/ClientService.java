@@ -8,7 +8,6 @@ import com.example.demo.mappers.ClientMapper;
 import com.example.demo.models.Client;
 import com.example.demo.repositories.ClientRepository;
 
-import lombok.Data;
 
 @Service
 public  class ClientService {
@@ -27,13 +26,7 @@ public  class ClientService {
 	}
 
 	public Client getClientById(long id) {
-		System.out.println("*********************************************************");
-		System.out.println(id);
-		System.out.println("*********************************************************");
 		Client client = ClientRepo.findById(id).orElse(null);
-		System.out.println("*********************************************************");
-		System.out.println(client);
-		System.out.println("*********************************************************");
 		return client;
 	}
 	

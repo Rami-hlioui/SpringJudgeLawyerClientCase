@@ -13,15 +13,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-@Data @NoArgsConstructor @AllArgsConstructor 
-
+@Data
+@AllArgsConstructor  
+@NoArgsConstructor 
 @Entity 
 @Table(name="lawyer")
 public class Lawyer  {
@@ -35,7 +34,7 @@ public class Lawyer  {
 	private String name;
 	
 	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY)
-	@JoinColumn(name="case_id")
+	@JoinColumn(name="lawyer_id")
 	private List<Case> cases= new ArrayList<>();
 
 }
